@@ -1,0 +1,61 @@
+﻿<Window x:Class="JapaneseCrossword.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JapaneseCrossword"
+        mc:Ignorable="d"
+        xmlns:cmd="clr-namespace:JapaneseCrossword.Infrastructure.Commands"
+        xmlns:lang="clr-namespace:JapaneseCrossword" 
+        xmlns:vm="clr-namespace:JapaneseCrossword.ViewModels.Base"  
+        Title="{Binding Title}"
+        Height="450" Width="800" MaxWidth="800" MinWidth="800"  MaxHeight="450" MinHeight="450">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Source="/Images/1.png" Margin="-180,10,-185,260" Grid.ColumnSpan="2"/>
+
+        <Button Margin="252,179,252,179" BorderBrush="White" Foreground="#FFFFF8F8" Background="White" OpacityMask="#FFFCF7F7" Command="{Binding Path=Play}">
+            <StackPanel>
+                <Image Source="/Images/hh2iGmQGj-s.jpg" Height="62" Width="217" OpacityMask="#FFF9EBEB" RenderTransformOrigin="0.5,0.5" >
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="0.942"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <TextBlock Text=""/>
+            </StackPanel>
+        </Button>
+
+        <Button Margin="252,260,253,93" BorderBrush="#FFFAF4F4" Foreground="White" Background="White" Command="{Binding Rul}">
+            <StackPanel>
+                <Image Source="/Images/JQH8dte5IfI.jpg" Height="63" Width="124" />
+            </StackPanel>
+        </Button>
+
+        <Button Margin="252,328,252,10" BorderBrush="#FFFAF4F4" Foreground="White" Background="White" Command="{Binding CloseApplicationCommand}">
+            <Image Source="/Images/kxQXAaJO2p0.jpg" Height="73" Width="358" RenderTransformOrigin="0.5,0.5" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="0"/>
+                        <RotateTransform/>
+                        <TranslateTransform X="0"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+        </Button>
+
+    </Grid>
+</Window>

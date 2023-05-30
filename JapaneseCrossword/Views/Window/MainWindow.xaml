@@ -1,0 +1,139 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:l="clr-namespace:JapaneseCrossword" 
+        xmlns:vm="clr-namespace:JapaneseCrossword.ViewModels.Base"         
+        xmlns:Commands="clr-namespace:JapaneseCrossword.Infrastructure.Commands" x:Class="JapaneseCrossword.MainWindow"         
+        mc:Ignorable="d"
+        Title="{Binding Title}"
+        Height="450" Width="800" MaxWidth="800" MinWidth="800"  MaxHeight="450" MinHeight="450">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
+
+    <Window.Resources>
+        <Style x:Key = "TriggerStyle" TargetType = "Button" >
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Margin" Value="0,62,0,0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Trigger>
+            </Style.Triggers>
+            <!--<Style.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="Black" Duration="0:0:0.1"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>-->
+        </Style>
+
+        <!--<ControlTemplate TargetType="{x:Type Button}" x:Key="Template">
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>-->
+        
+    </Window.Resources>
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*" />
+            <ColumnDefinition Width="51*"/>
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="62*" />
+            <ColumnDefinition Width="258*" />
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+
+        <Button Style="{StaticResource TriggerStyle}" Grid.Column="2"  Command="{Binding Path=But0}" x:Name="button0"  Background="White" Margin="0,62,0,0" Grid.RowSpan="2" />
+        <Button Style="{StaticResource TriggerStyle}" Grid.Column="2" Grid.Row="1"  Command="{Binding Path=But1}"  x:Name="button1"  Margin="0,62,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="2" Style="{StaticResource TriggerStyle}" Grid.Row="2"  Command="{Binding Path=But2}" x:Name="button2" x:FieldModifier="public" Grid.RowSpan="2"/>
+        <Button Grid.Column="3" Command="{Binding Path=But3}" Style="{StaticResource TriggerStyle}" x:Name="button3" Grid.RowSpan="2"/>
+        <Button Grid.Column="3" Grid.Row="1"  Command="{Binding Path=But4}" Style="{StaticResource TriggerStyle}" x:Name="button4"  Grid.RowSpan="2"/>
+        <Button Grid.Column="3" Grid.Row="2"  x:Name="button5" Style="{StaticResource TriggerStyle}"  Command="{Binding Path=But5}" Grid.RowSpan="2"/>
+        <Button Grid.Column="4" Style="{StaticResource TriggerStyle}" x:Name="button6" Command="{Binding Path=But6}" Grid.RowSpan="2"/>
+        <Button Grid.Column="4" Grid.Row="1" x:Name="button7" Style="{StaticResource TriggerStyle}" Command="{Binding Path=But7}" Grid.RowSpan="2"/>
+        <Button Grid.Column="4" Grid.Row="2" Style="{StaticResource TriggerStyle}" x:Name="button8" Command="{Binding Path=But8}"  Grid.RowSpan="2"/>
+        <Button Grid.Column="2" Grid.Row="3" Style="{StaticResource TriggerStyle}" x:Name="button9" Command="{Binding Path=But9}" Grid.RowSpan="2"/>
+        <Button Grid.Column="2" Grid.Row="4" Style="{StaticResource TriggerStyle}" x:Name="button10" Command="{Binding Path=But10}"  Grid.RowSpan="2"/>
+        <Button Grid.Column="3" Grid.Row="3" Style="{StaticResource TriggerStyle}" x:Name="button11" Command="{Binding Path=But11}" Grid.RowSpan="2"/>
+        <Button Grid.Column="3" Grid.Row="4" x:Name="button12"  Style="{StaticResource TriggerStyle}"  Command="{Binding Path=But12}" Grid.RowSpan="2"/>
+        <Button Grid.Column="4" Grid.Row="3" Command="{Binding Path=But13}" x:Name="button13"  Style="{StaticResource TriggerStyle}" Grid.RowSpan="2"/>
+        <Button Grid.Column="4" Grid.Row="4" Style="{StaticResource TriggerStyle}" x:Name="button14" Command="{Binding Path=But14}" Grid.RowSpan="2"/>
+        <Button Grid.Column="5" x:Name="button15"  Style="{StaticResource TriggerStyle}"  Command="{Binding Path=But15}" Grid.RowSpan="2"/>
+        <Button Grid.Column="5" Grid.Row="1" Style="{StaticResource TriggerStyle}" x:Name="button16" Command="{Binding Path=But16}" Grid.RowSpan="2"/>
+        <Button Grid.Column="5" Grid.Row="2" Style="{StaticResource TriggerStyle}" x:Name="button17" Command="{Binding Path=But17}" Grid.RowSpan="2"/>
+        <Button Grid.Column="5" Grid.Row="3"  Command="{Binding Path=But18}" x:Name="button18" Style="{StaticResource TriggerStyle}" Grid.RowSpan="2"/>
+        <Button Grid.Column="5" Grid.Row="4"  Command="{Binding Path=But19}" x:Name="button19" Style="{StaticResource TriggerStyle}"  Grid.RowSpan="2"/>
+        <Button Grid.Column="6" x:Name="button20"  Command="{Binding Path=But20}" Style="{StaticResource TriggerStyle}" Grid.RowSpan="2"/>
+        <Button Grid.Column="6" Grid.Row="1" x:Name="button25"  Command="{Binding Path=But25}" Style="{StaticResource TriggerStyle}"  Grid.RowSpan="2"/>
+        <Button Grid.Column="6" Grid.Row="2"  x:Name="button26"  Command="{Binding Path=But26}" Style="{StaticResource TriggerStyle}"  Grid.RowSpan="2"/>
+        <Button Grid.Column="6" Grid.Row="3" x:Name="button27"  Command="{Binding Path=But27}" Style="{StaticResource TriggerStyle}"  Grid.RowSpan="2"/>
+        <Button Grid.Column="6" Grid.Row="4" Style="{StaticResource TriggerStyle}" x:Name="button28" Command="{Binding Path=But28}" Grid.RowSpan="2"/>
+
+
+        <Label Grid.Column="2" Content="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="3" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="4" Content="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="5" Content="2" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="6" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Content="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Content="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Content="1 2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Content="3" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center"/>
+        <Label Grid.Column="1" Content="1 1 1" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center"/>
+
+
+        <Button Background="White" Grid.ColumnSpan="5" Margin="27,10,39,10" Grid.Row="6"  Command="{Binding Path=Clear}" Grid.Column="2">
+            <StackPanel>
+                <Image Source="/Images/очч.jpg" Height="43" Width="225" />
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Grid.Column="7" Grid.ColumnSpan="2" Margin="50,31,50,31" Grid.RowSpan="2" Grid.Row="1" Command="{Binding Path=Check}">
+            <StackPanel>
+                <Image Source="/Images/пров.jpg" Height="63" Width="124" />
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Grid.Column="7" Margin="50,18,50,44" Grid.RowSpan="2" Grid.Row="3" Grid.ColumnSpan="2" Command="{Binding Path=Rul}" >
+            <StackPanel>
+                <Image Source="/Images/JQH8dte5IfI.jpg" Height="56" Width="118" />
+            </StackPanel>
+        </Button>
+
+        <Button Background="White" Grid.Column="7" Margin="50,62,50,0" Grid.RowSpan="2" Grid.Row="4" Grid.ColumnSpan="2" Command="{Binding CloseApplicationCommand}" Height="NaN" Width="NaN">
+
+            <StackPanel>
+                <Image Source="/Images/kxQXAaJO2p0.jpg" Height="58" Width="254" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>
